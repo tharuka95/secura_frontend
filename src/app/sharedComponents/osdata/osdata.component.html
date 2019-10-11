@@ -1,14 +1,26 @@
-<div class="container">
-    <h1>Dune Server Monitor</h1>
-    <div style="background:#eee" class="">
-        <div class="col-md-4">
-            <h4>Memory</h4>
-            <canvas id="mChart" width="400" height="400"></canvas>
+<!-- Card -->
+<div class="card card-size mr-auto">
+
+    <!-- Card content -->
+    <div class="card-body">
+
+        <!-- Title -->
+        <h4 class="card-title"><a>System Monitoring</a></h4>
+        <hr />
+
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Memory</h4>
+                <canvas id="mChart" width="200" height="200"></canvas>
+            </div>
+
+            <div class="col-md-6">
+                <h4>Cpu load average</h4>
+                <canvas id="cChart" width="200" height="200"></canvas>
+            </div>
         </div>
- 
-        <div class="col-md-4">
-            <h4>Cpu load average</h4>
-            <canvas id="cChart" width="400" height="400"></canvas>
-        </div>
+
     </div>
+
 </div>
+<!-- Card -->
