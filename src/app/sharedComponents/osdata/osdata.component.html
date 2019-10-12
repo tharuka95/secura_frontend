@@ -6,7 +6,7 @@
 
         <!-- Title -->
         <h4 class="card-title"><a>System Monitoring</a></h4>
-        <hr />
+
 
         <div class="row">
             <div class="col-md-6">
@@ -24,3 +24,89 @@
 
 </div>
 <!-- Card -->
+<br/>
+<div class= "row">
+<!-- Card -->
+<div class="card card-size mr-auto col-md-4">
+
+    <!-- Card content -->
+    <div class="card-body">
+
+        <!-- Title -->
+        <h4 class="card-title"><a>System Info</a></h4>
+
+        <!--Table-->
+<table class="table table-hover table-fixed">
+
+    <!--Table head-->
+    <thead>
+        <tr> 
+            <th>Manufacturer</th>
+            <th>{{ systemsinfo.manufacturer}}</th>
+        </tr>
+        <tr> 
+            <th>Model</th>
+            <th>{{ systemsinfo.model}}</th>
+        </tr>
+        <tr> 
+            <th>Serial</th>
+            <th>{{ systemsinfo.serial}}</th>
+        </tr>
+        <tr> 
+            <th>sku</th>
+            <th>{{ systemsinfo.sku}}</th>
+        </tr>
+    </thead>
+    <!--Table head-->
+
+</table>
+<!--Table-->
+    </div>
+
+</div>
+<!-- Card -->
+
+<!-- Card -->
+<div class="card card-size mr-auto col-md-4">
+
+    <!-- Card content -->
+    <div class="card-body">
+
+        <!-- Title -->
+        <h4 class="card-title"><a>OS Info</a></h4>
+
+        <!--Table-->
+<table class="table table-hover table-fixed">
+
+    <!--Table head-->
+    <thead>
+        <tr> 
+            <th>Distribution Name</th>
+            <th>{{ OSinfo.distro}}</th>
+        </tr>
+        <tr> 
+            <th>Build Version</th>
+            <th>{{ OSinfo.build}}</th>
+        </tr>
+        <tr> 
+            <th>Architecture</th>
+            <th>{{ OSinfo.arch}}</th>
+        </tr>
+        <tr> 
+            <th>Platform</th>
+            <th>{{ OSinfo.platform}}</th>
+        </tr>
+        <tr> 
+            <th>Release</th>
+            <th>{{ OSinfo.release}}</th>
+        </tr>
+    </thead>
+    <!--Table head-->
+
+</table>
+<!--Table-->
+    </div>
+
+</div>
+<!-- Card -->
+</div>

@@ -13,6 +13,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { MalwareDetectionComponent } from './sharedComponents/malware-detection/malware-detection.component';
 import { FileUploadService } from './sharedComponents/malware-detection/file-upload.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SysteminfoService } from './sharedComponents/osdata/systeminfo.service';
+import { DevicelistComponent } from './sharedComponents/devicelist/devicelist.component';
+import { DeviceService } from './sharedComponents/devicelist/device.service';
 
 
 
@@ -22,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     OSDataComponent,
     NavBarComponentComponent,
     MalwareDetectionComponent,
+    DevicelistComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [FileUploadService],
+  providers: [SysteminfoService, DeviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

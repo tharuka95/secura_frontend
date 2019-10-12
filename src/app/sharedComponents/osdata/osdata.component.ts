@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import io from 'socket.io-client';
 import { Chart, pattern } from 'chart.js';
+import { SysteminfoService } from './systeminfo.service';
 
 @Component({
   selector: 'secura-osdata',
@@ -14,8 +15,10 @@ export class OSDataComponent implements OnInit {
   cpuChart = undefined;
   cpuType = '';
   noOfCpu = '';
+  systemsinfo :any;
+  OSinfo :any;
 
-  constructor() { }
+  constructor(private systeminfo :SysteminfoService) { }
 
   ngOnInit() {
     // ---------------------------------------------------Section II
@@ -56,7 +59,17 @@ export class OSDataComponent implements OnInit {
         this.socket.on('connected', (connectData) => this.connected(connectData));
         this.socket.on('os-update', (event) => this.updateCharts(event));
 
-        
+        this.systeminfo.getSystemInfo()
+        .subscribe(result => {
+          console.log(result.message);
+          this.systemsinfo = result.message;
+        });
+
+        this.systeminfo.getOSInfo()
+        .subscribe(result => {
+          console.log(result.message);
+          this.OSinfo = result.message;
+        });
       }
      
     // -----------------------------------------------------------------------Section IV
