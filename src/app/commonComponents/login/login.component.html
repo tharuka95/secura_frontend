@@ -1,0 +1,25 @@
+<div class="card mx-auto" style="width: 35%; margin-top: 150px;">
+
+
+      <!-- Default form login -->
+      <form class="text-center border-light p-5" [formGroup]="loginform">
+
+          <img src='../../../favicon.ico'><p class="h4 mb-4">Secura Sign-In</p>
+          <hr/>
+
+          <!-- Email -->
+          <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail"
+              formControlName="email">
+
+          <!-- Password -->
+          <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password"
+              formControlName="password">
+
+          <!-- Sign in button -->
+          <button class="btn btn-info btn-block my-4" type="submit" (click)="OnSubmit()">Sign in</button>
+
+
+      </form>
+      <!-- Default form login -->
+
+</div>

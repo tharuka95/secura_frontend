@@ -16,8 +16,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { SysteminfoService } from './sharedComponents/osdata/systeminfo.service';
 import { DevicelistComponent } from './sharedComponents/devicelist/devicelist.component';
 import { DeviceService } from './sharedComponents/devicelist/device.service';
-
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+import { LoginComponent } from './commonComponents/login/login.component';
+import { LoginService } from './commonComponents/login/login.service';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 @NgModule({
   declarations: [
@@ -26,6 +32,7 @@ import { DeviceService } from './sharedComponents/devicelist/device.service';
     NavBarComponentComponent,
     MalwareDetectionComponent,
     DevicelistComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,9 +42,13 @@ import { DeviceService } from './sharedComponents/devicelist/device.service';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    ReactiveFormsModule,
+    AngularFireDatabaseModule
   ],
-  providers: [SysteminfoService, DeviceService],
+  providers: [SysteminfoService, DeviceService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-    
