@@ -20,9 +20,15 @@ export class LoginComponent implements OnInit {
     this.loginmodel.email = this.loginform.value["email"];
     this.loginmodel.psw = this.loginform.value["password"]
     console.log(this.loginmodel.email);
-    this.loginService.GetLogin(this.loginmodel.email)
-    .snapshotChanges().subscribe(data => {
-       console.log(data.payload.val());
+    this.loginService.GetLogin()
+    .subscribe(data => {
+      console.log(data)
+       data.forEach(element => {
+         if(element['username'] === this.loginmodel.email){
+           console.log(element)
+         }
+
+       });
     })
 }
   createForm() {

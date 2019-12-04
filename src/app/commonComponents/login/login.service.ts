@@ -11,10 +11,11 @@ export class LoginService {
 
   login: any;
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private db: AngularFirestore) {
+    this.login = this.db.collection('accounts').valueChanges()
+   }
 
-  GetLogin(id: string) {
-    this.login = this.db.object('secura/accounts/');
+  GetLogin() {
     return this.login;
   }  
 }
