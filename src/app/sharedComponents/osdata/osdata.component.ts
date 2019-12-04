@@ -10,7 +10,8 @@ import { SysteminfoService } from './systeminfo.service';
 })
 export class OSDataComponent implements OnInit {
   title = 'app';
-  socket = io.connect('localhost:3000');
+  link = sessionStorage.getItem('sessionUrl');
+  socket = io.connect(this.link);
   memChart = undefined;
   cpuChart = undefined;
   cpuType = '';
