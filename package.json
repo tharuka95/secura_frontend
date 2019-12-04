@@ -1,6 +1,5 @@
 {
   "name": "secura-frontend",
-  "version": "8.3.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +7,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod"
+    "heroku-postbuild": "ng build --prod"
   },
   "engines": {
     "node": "v10.16.3",
