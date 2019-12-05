@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DeviceService {
-  readonly rootUrl = 'http://localhost:3000';
+  readonly rootUrl = sessionStorage.getItem('sessionUrl');;
   
   constructor(private http: HttpClient) { }
 
